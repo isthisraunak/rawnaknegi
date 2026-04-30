@@ -43,7 +43,7 @@
     background: var(--red-dim);
   }
 
-  /* ── HEADER ── */
+  /* â”€â”€ HEADER â”€â”€ */
   header {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -111,11 +111,11 @@
   nav a.active { color: var(--red); }
   nav a.active::after { transform: scaleX(1); }
 
-  /* ── PAGES ── */
+  /* â”€â”€ PAGES â”€â”€ */
   .page { display: none; min-height: 100vh; }
   .page.active { display: block; }
 
-  /* ── HOME ── */
+  /* â”€â”€ HOME â”€â”€ */
   #home {
     display: none;
     align-items: center;
@@ -263,7 +263,7 @@
     50% { opacity: 1; }
   }
 
-  /* ── UNDER CONSTRUCTION PAGES ── */
+  /* â”€â”€ UNDER CONSTRUCTION PAGES â”€â”€ */
   .uc-page {
     min-height: 100vh;
     display: none;
@@ -331,6 +331,51 @@
     margin: 0 auto;
   }
 
+  .fiction-work {
+    display: inline-block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    letter-spacing: 0.05em;
+    color: var(--white);
+    line-height: 0.95;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .fiction-work:hover {
+    color: var(--red);
+  }
+  .fiction-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    align-items: start;
+    gap: 2rem;
+    width: min(900px, calc(100vw - 2rem));
+    margin: 0 auto;
+  }
+  .fiction-item {
+    text-align: center;
+  }
+  .fiction-item .uc-rule {
+    margin: 1.4rem auto 0;
+  }
+  .fiction-reader {
+    width: min(900px, calc(100vw - 2rem));
+    margin-top: 2rem;
+  }
+  .download-btn {
+    margin: 0 auto 1.25rem;
+  }
+  .pdf-frame {
+    width: 100%;
+    height: min(70vh, 760px);
+    border: 1px solid var(--mid);
+    background: var(--grey);
+  }
+  #fiction .uc-body {
+    display: none;
+  }
+
   .back-btn {
     margin-top: 3rem;
     display: inline-block;
@@ -363,36 +408,6 @@
     z-index: 1000;
   }
 
-  /* horizontal marquee at bottom of home */
-  .marquee-strip {
-    position: absolute;
-    bottom: 0;
-    left: 0; right: 0;
-    border-top: 1px solid var(--mid);
-    overflow: hidden;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    opacity: 0;
-    animation: fadeUp 0.5s 1.8s forwards;
-  }
-  .marquee-inner {
-    display: flex;
-    gap: 3rem;
-    animation: marquee 22s linear infinite;
-    white-space: nowrap;
-  }
-  .marquee-inner span {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.55rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--red-dim);
-  }
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
 </style>
 </head>
 <body>
@@ -426,19 +441,6 @@
   </div>
 
 
-    <div class="marquee-inner">
-      <span>Fiction</span><span>·</span>
-      <span>Non-Fiction</span><span>·</span>
-      <span>Blog</span><span>·</span>
-      <span>CS Projects</span><span>·</span>
-      <span>Socials</span><span>·</span>
-      <span>Fiction</span><span>·</span>
-      <span>Non-Fiction</span><span>·</span>
-      <span>Blog</span><span>·</span>
-      <span>CS Projects</span><span>·</span>
-      <span>Socials</span><span>·</span>
-    </div>
-  </div>
 </section>
 
 <!-- FICTION -->
@@ -446,10 +448,47 @@
   <div class="uc-bg-text">FIC</div>
   <div class="uc-inner">
     <p class="uc-tag">01 / Fiction</p>
-    <h2 class="uc-title">Under<br>Construction</h2>
+    <div class="fiction-list">
+      <div class="fiction-item">
+        <a class="fiction-work" href="#" onclick="showPage('fiction-more')">Fiction<br>and More<br>Fiction</a>
+        <div class="uc-rule"></div>
+      </div>
+      <div class="fiction-item">
+        <a class="fiction-work" href="#" onclick="showPage('kidnapping')">Kidnapping<br>of the<br>Year</a>
+        <div class="uc-rule"></div>
+      </div>
+    </div>
+    <button class="back-btn" onclick="showPage('home')">â† Return Home</button>
+  </div>
+</section>
+
+<!-- FICTION AND MORE FICTION -->
+<section id="fiction-more" class="page uc-page">
+  <div class="uc-bg-text">FIC</div>
+  <div class="uc-inner">
+    <p class="uc-tag">01 / Fiction</p>
+    <h2 class="uc-title">Fiction<br>and More<br>Fiction</h2>
     <div class="uc-rule"></div>
-    <p class="uc-body">Stories are being written, worlds are being built. Check back soon — something worth reading is coming.</p>
-    <button class="back-btn" onclick="showPage('home')">← Return Home</button>
+    <div class="fiction-reader">
+      <a class="back-btn download-btn" href="Fiction and More Fiction.pdf" download>Download</a>
+      <iframe class="pdf-frame" src="Fiction and More Fiction.pdf" title="Fiction and More Fiction"></iframe>
+    </div>
+    <button class="back-btn" onclick="showPage('fiction')">Back to Fiction</button>
+  </div>
+</section>
+
+<!-- KIDNAPPING OF THE YEAR -->
+<section id="kidnapping" class="page uc-page">
+  <div class="uc-bg-text">FIC</div>
+  <div class="uc-inner">
+    <p class="uc-tag">01 / Fiction</p>
+    <h2 class="uc-title">Kidnapping<br>of the<br>Year</h2>
+    <div class="uc-rule"></div>
+    <div class="fiction-reader">
+      <a class="back-btn download-btn" href="kidnapping of the year.pdf" download>Download</a>
+      <iframe class="pdf-frame" src="kidnapping of the year.pdf" title="Kidnapping of the Year"></iframe>
+    </div>
+    <button class="back-btn" onclick="showPage('fiction')">Back to Fiction</button>
   </div>
 </section>
 
@@ -461,7 +500,7 @@
     <h2 class="uc-title">Under<br>Construction</h2>
     <div class="uc-rule"></div>
     <p class="uc-body">Essays, observations, and real things that matter. They'll find their shape here, in time.</p>
-    <button class="back-btn" onclick="showPage('home')">← Return Home</button>
+    <button class="back-btn" onclick="showPage('home')">â† Return Home</button>
   </div>
 </section>
 
@@ -472,8 +511,8 @@
     <p class="uc-tag">03 / Blog</p>
     <h2 class="uc-title">Under<br>Construction</h2>
     <div class="uc-rule"></div>
-    <p class="uc-body">Thoughts in progress. Fragments of thinking out loud. This space will be messy and honest — eventually.</p>
-    <button class="back-btn" onclick="showPage('home')">← Return Home</button>
+    <p class="uc-body">Thoughts in progress. Fragments of thinking out loud. This space will be messy and honest â€” eventually.</p>
+    <button class="back-btn" onclick="showPage('home')">â† Return Home</button>
   </div>
 </section>
 
@@ -485,7 +524,7 @@
     <h2 class="uc-title">Under<br>Construction</h2>
     <div class="uc-rule"></div>
     <p class="uc-body">Old code, half-finished experiments, things that somehow worked. The ex-addict's archive.</p>
-    <button class="back-btn" onclick="showPage('home')">← Return Home</button>
+    <button class="back-btn" onclick="showPage('home')">â† Return Home</button>
   </div>
 </section>
 
@@ -497,7 +536,7 @@
     <h2 class="uc-title">Under<br>Construction</h2>
     <div class="uc-rule"></div>
     <p class="uc-body">Links to places on the internet where I occasionally exist. Being assembled.</p>
-    <button class="back-btn" onclick="showPage('home')">← Return Home</button>
+    <button class="back-btn" onclick="showPage('home')">â† Return Home</button>
   </div>
 </section>
 

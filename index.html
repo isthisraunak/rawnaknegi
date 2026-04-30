@@ -481,6 +481,252 @@
     border-color: var(--red);
   }
 
+  /* ── BLOG PAGE ── */
+  #blog {
+    display: none;
+    min-height: 100vh;
+    padding-top: 64px;
+  }
+  #blog.active { display: block; }
+
+  .blog-header {
+    padding: 5rem 6rem 3.5rem;
+    border-bottom: 1px solid var(--mid);
+  }
+
+  .blog-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3.5rem, 9vw, 8rem);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    margin-top: 1rem;
+  }
+
+  .blog-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: rgba(240,236,228,0.4);
+    margin-top: 1.2rem;
+    letter-spacing: 0.04em;
+  }
+
+  .blog-subscribe-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    min-height: calc(100vh - 64px - 10rem);
+  }
+
+  .blog-subscribe-left {
+    padding: 4rem 5rem 4rem 6rem;
+    border-right: 1px solid var(--mid);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .blog-coming-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 1.5rem;
+  }
+
+  .blog-coming-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    line-height: 1.75;
+    color: rgba(240,236,228,0.55);
+    font-weight: 300;
+    max-width: 420px;
+  }
+
+  .blog-subscribe-right {
+    padding: 4rem 6rem 4rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .blog-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .blog-field-wrap {
+    position: relative;
+  }
+
+  .blog-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--mid);
+    color: var(--white);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    padding: 1rem 0;
+    outline: none;
+    letter-spacing: 0.03em;
+    transition: border-color 0.25s;
+  }
+  .blog-input::placeholder {
+    color: rgba(240,236,228,0.2);
+    font-style: italic;
+  }
+  .blog-input:focus {
+    border-bottom-color: var(--red);
+  }
+
+  .blog-submit {
+    margin-top: 2rem;
+    align-self: flex-start;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--red);
+    border: 1px solid var(--red);
+    padding: 0.9rem 2.5rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .blog-submit:hover {
+    background: transparent;
+    color: var(--red);
+  }
+
+  .blog-fine-print {
+    margin-top: 1.2rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.5rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(240,236,228,0.2);
+  }
+
+  @media (max-width: 700px) {
+    .blog-subscribe-wrap {
+      grid-template-columns: 1fr;
+    }
+    .blog-subscribe-left {
+      padding: 3rem 2rem;
+      border-right: none;
+      border-bottom: 1px solid var(--mid);
+    }
+    .blog-subscribe-right {
+      padding: 3rem 2rem;
+    }
+    .blog-header { padding: 3rem 2rem 2.5rem; }
+  }
+
+  /* ── SOCIALS PAGE ── */
+  #socials {
+    display: none;
+    min-height: 100vh;
+    padding-top: 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  #socials.active { display: block; }
+
+  .socials-header {
+    padding: 5rem 6rem 3rem;
+    border-bottom: 1px solid var(--mid);
+  }
+
+  .socials-list {
+    padding: 0 6rem;
+  }
+
+  .social-item {
+    display: grid;
+    grid-template-columns: 64px 1fr auto;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 2.4rem 0;
+    border-bottom: 1px solid var(--mid);
+    text-decoration: none;
+    position: relative;
+    transition: none;
+  }
+  .social-item::before {
+    content: '';
+    position: absolute;
+    left: -6rem; right: -6rem; top: 0; bottom: 0;
+    background: rgba(192,57,43,0.03);
+    opacity: 0;
+    transition: opacity 0.25s;
+    pointer-events: none;
+  }
+  .social-item:hover::before { opacity: 1; }
+  .social-item:hover .social-name { color: var(--red); }
+  .social-item:hover .social-handle { color: rgba(240,236,228,0.55); }
+  .social-item:hover .social-arrow { color: var(--red); transform: translateX(6px); }
+
+  .social-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--mid);
+    flex-shrink: 0;
+    transition: border-color 0.25s;
+  }
+  .social-item:hover .social-icon { border-color: var(--red-dim); }
+
+  .social-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: rgba(240,236,228,0.5);
+    transition: fill 0.25s;
+  }
+  .social-item:hover .social-icon svg { fill: var(--red); }
+
+  .social-info {}
+
+  .social-platform {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--red-dim);
+    margin-bottom: 0.3rem;
+  }
+
+  .social-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1;
+    transition: color 0.2s;
+  }
+
+  .social-handle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: rgba(240,236,228,0.3);
+    margin-top: 0.25rem;
+    transition: color 0.2s;
+    letter-spacing: 0.03em;
+  }
+
+  .social-arrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.1rem;
+    color: var(--mid);
+    transition: color 0.2s, transform 0.2s;
+  }
+
   /* noise overlay */
   body::before {
     content: '';
@@ -1560,14 +1806,27 @@
 </section>
 
 <!-- BLOG -->
-<section id="blog" class="page uc-page">
-  <div class="uc-bg-text">BLG</div>
-  <div class="uc-inner">
+<section id="blog" class="page">
+  <div class="blog-header">
     <p class="uc-tag">03 / Blog</p>
-    <h2 class="uc-title">Under<br>Construction</h2>
-    <div class="uc-rule"></div>
-    <p class="uc-body">Thoughts in progress. Fragments of thinking out loud. This space will be messy and honest â€” eventually.</p>
-    <button class="back-btn" onclick="showPage('home')">â† Return Home</button>
+    <h2 class="blog-title">The Blog</h2>
+    <p class="blog-subtitle">Thoughts in progress. Fragments of thinking out loud.</p>
+  </div>
+
+  <div class="blog-subscribe-wrap">
+    <div class="blog-subscribe-left">
+      <p class="blog-coming-label">Coming Soon</p>
+      <p class="blog-coming-text">Essays, rants, half-baked ideas, and the occasional thing that actually matters. Subscribe to get notified when the first one drops.</p>
+    </div>
+    <div class="blog-subscribe-right">
+      <form action="https://api.follow.it/subscription-form/QW9LaTJqSVgvQklqVFR4dXhpUTdrR0d6Y1VWMzFhUU9pSzR3TkEvQlBybW5QM0xuZ1EwUTlmMHZFbEE5TXhwZlloNUxTSVY2UzhRQXluRmJtNi80TlRQUjl5bGs5Q0MrVy9waGRITWFRb1NDZ3N2RWo0R2FsV3RMbG82OTVJN2V8K3Rkbmc0SUJ1cEpZTGlxcGdXKzJ5cUtxV1dzNjdpcnc1VU1UU1ZPZzI0dz0=/21" method="post" class="blog-form">
+        <div class="blog-field-wrap">
+          <input type="email" name="email" placeholder="your@email.com" required class="blog-input" />
+        </div>
+        <button type="submit" class="blog-submit">Notify Me</button>
+      </form>
+      <p class="blog-fine-print">No spam. Unsubscribe anytime.</p>
+    </div>
   </div>
 </section>
 
@@ -1584,14 +1843,60 @@
 </section>
 
 <!-- SOCIALS -->
-<section id="socials" class="page uc-page">
-  <div class="uc-bg-text">SOC</div>
-  <div class="uc-inner">
+<section id="socials" class="page">
+  <div class="socials-header">
     <p class="uc-tag">05 / Socials</p>
-    <h2 class="uc-title">Under<br>Construction</h2>
-    <div class="uc-rule"></div>
-    <p class="uc-body">Links to places on the internet where I occasionally exist. Being assembled.</p>
-    <button class="back-btn" onclick="showPage('home')">â† Return Home</button>
+    <h2 class="uc-title" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,9vw,8rem);line-height:0.9;color:var(--white);letter-spacing:0.02em;">Find Me<br>Out There</h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:rgba(240,236,228,0.4);margin-top:1.2rem;letter-spacing:0.04em;">Places on the internet where I occasionally exist.</p>
+  </div>
+
+  <div class="socials-list">
+
+    <!-- YouTube -->
+    <a class="social-item" href="https://www.youtube.com/@therawkson" target="_blank" rel="noopener">
+      <div class="social-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+      </div>
+      <div class="social-info">
+        <div class="social-platform">YouTube</div>
+        <div class="social-name">The Rawkson</div>
+        <div class="social-handle">@therawkson</div>
+      </div>
+      <div class="social-arrow">&#x2192;</div>
+    </a>
+
+    <!-- X / Twitter -->
+    <a class="social-item" href="https://www.x.com/rawnaknegi" target="_blank" rel="noopener">
+      <div class="social-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.855L1.205 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      </div>
+      <div class="social-info">
+        <div class="social-platform">X (Twitter)</div>
+        <div class="social-name">Raunak Negi</div>
+        <div class="social-handle">@rawnaknegi</div>
+      </div>
+      <div class="social-arrow">&#x2192;</div>
+    </a>
+
+    <!-- Instagram -->
+    <a class="social-item" href="https://www.instagram.com/rawnaknegi" target="_blank" rel="noopener">
+      <div class="social-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+        </svg>
+      </div>
+      <div class="social-info">
+        <div class="social-platform">Instagram</div>
+        <div class="social-name">Raunak Negi</div>
+        <div class="social-handle">@rawnaknegi</div>
+      </div>
+      <div class="social-arrow">&#x2192;</div>
+    </a>
+
   </div>
 </section>
 

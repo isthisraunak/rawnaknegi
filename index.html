@@ -513,11 +513,83 @@
     letter-spacing: 0.04em;
   }
 
-  .blog-subscribe-wrap {
+  /* listing */
+  .blog-list {
+    padding: 0 6rem;
+  }
+
+  .blog-item {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 2.2rem 0;
+    border-bottom: 1px solid var(--mid);
+    cursor: pointer;
+    position: relative;
+  }
+  .blog-item::before {
+    content: '';
+    position: absolute;
+    left: -6rem; right: -6rem; top: 0; bottom: 0;
+    background: rgba(192,57,43,0.03);
+    opacity: 0;
+    transition: opacity 0.25s;
+    pointer-events: none;
+  }
+  .blog-item:hover::before { opacity: 1; }
+  .blog-item:hover .blog-item-title { color: var(--red); }
+  .blog-item:hover .blog-item-arrow { color: var(--red); transform: translateX(6px); }
+
+  .blog-item-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--red-dim);
+    letter-spacing: 0.2em;
+  }
+
+  .blog-item-type {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.5rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--red);
+    padding: 0.2rem 0.5rem;
+    margin-bottom: 0.4rem;
+    display: inline-block;
+  }
+
+  .blog-item-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    letter-spacing: 0.04em;
+    color: var(--white);
+    transition: color 0.2s;
+    line-height: 1;
+  }
+
+  .blog-item-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: rgba(240,236,228,0.35);
+    margin-top: 0.3rem;
+  }
+
+  .blog-item-arrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.2rem;
+    color: var(--mid);
+    transition: color 0.2s, transform 0.2s;
+  }
+
+  /* subscribe strip at bottom of blog listing */
+  .blog-subscribe-strip {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0;
-    min-height: calc(100vh - 64px - 10rem);
+    border-top: 1px solid var(--mid);
+    margin-top: 0;
   }
 
   .blog-subscribe-left {
@@ -539,9 +611,9 @@
 
   .blog-coming-text {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    font-size: clamp(1.1rem, 1.8vw, 1.35rem);
     line-height: 1.75;
-    color: rgba(240,236,228,0.55);
+    color: rgba(240,236,228,0.45);
     font-weight: 300;
     max-width: 420px;
   }
@@ -559,9 +631,7 @@
     gap: 0;
   }
 
-  .blog-field-wrap {
-    position: relative;
-  }
+  .blog-field-wrap { position: relative; }
 
   .blog-input {
     width: 100%;
@@ -576,13 +646,8 @@
     letter-spacing: 0.03em;
     transition: border-color 0.25s;
   }
-  .blog-input::placeholder {
-    color: rgba(240,236,228,0.2);
-    font-style: italic;
-  }
-  .blog-input:focus {
-    border-bottom-color: var(--red);
-  }
+  .blog-input::placeholder { color: rgba(240,236,228,0.2); font-style: italic; }
+  .blog-input:focus { border-bottom-color: var(--red); }
 
   .blog-submit {
     margin-top: 2rem;
@@ -598,10 +663,7 @@
     cursor: pointer;
     transition: background 0.2s, color 0.2s, border-color 0.2s;
   }
-  .blog-submit:hover {
-    background: transparent;
-    color: var(--red);
-  }
+  .blog-submit:hover { background: transparent; color: var(--red); }
 
   .blog-fine-print {
     margin-top: 1.2rem;
@@ -612,22 +674,41 @@
     color: rgba(240,236,228,0.2);
   }
 
+  /* blog reader pages */
+  .blog-reader-page {
+    display: none;
+    min-height: 100vh;
+    padding-top: 64px;
+  }
+  .blog-reader-page.active { display: block; }
+
+  .blog-essay-body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 5rem 2rem 8rem;
+  }
+
+  .blog-essay-body p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    line-height: 1.85;
+    color: rgba(240,236,228,0.78);
+    margin-bottom: 1.6rem;
+    font-weight: 300;
+  }
+
   @media (max-width: 700px) {
-    .blog-subscribe-wrap {
-      grid-template-columns: 1fr;
-    }
-    .blog-subscribe-left {
-      padding: 3rem 2rem;
-      border-right: none;
-      border-bottom: 1px solid var(--mid);
-    }
-    .blog-subscribe-right {
-      padding: 3rem 2rem;
-    }
-    .blog-header { padding: 3rem 2rem 2.5rem; }
+    .blog-list { padding: 0 1.5rem; }
+    .blog-item { grid-template-columns: 50px 1fr auto; gap: 1rem; }
+    .blog-item::before { left: -1.5rem; right: -1.5rem; }
+    .blog-header { padding: 3rem 1.5rem 2.5rem; }
+    .blog-subscribe-strip { grid-template-columns: 1fr; }
+    .blog-subscribe-left { padding: 3rem 1.5rem; border-right: none; border-bottom: 1px solid var(--mid); }
+    .blog-subscribe-right { padding: 3rem 1.5rem; }
   }
 
   /* ── SOCIALS PAGE ── */
+    /* ── SOCIALS PAGE ── */
   #socials {
     display: none;
     min-height: 100vh;
@@ -1814,10 +1895,44 @@
     <p class="blog-subtitle">Thoughts in progress. Fragments of thinking out loud.</p>
   </div>
 
-  <div class="blog-subscribe-wrap">
+  <div class="blog-list">
+
+    <div class="blog-item" onclick="showPage('blog-confusion')">
+      <div class="blog-item-num">001</div>
+      <div>
+        <div class="blog-item-type">Essay</div>
+        <div class="blog-item-title">Confusion</div>
+        <div class="blog-item-desc">On God, belief, arranged marriages, and the rules our ancestors left behind.</div>
+      </div>
+      <div class="blog-item-arrow">→</div>
+    </div>
+
+    <div class="blog-item" onclick="showPage('blog-scars')">
+      <div class="blog-item-num">002</div>
+      <div>
+        <div class="blog-item-type">Essay</div>
+        <div class="blog-item-title">Comparing Scars</div>
+        <div class="blog-item-desc">On privilege, pain, and the pointlessness of measuring other people's misery.</div>
+      </div>
+      <div class="blog-item-arrow">→</div>
+    </div>
+
+    <div class="blog-item" onclick="showPage('blog-wishes')">
+      <div class="blog-item-num">003</div>
+      <div>
+        <div class="blog-item-type">Essay</div>
+        <div class="blog-item-title">Three Wishes</div>
+        <div class="blog-item-desc">From wanting to be the fastest runner to wanting dinner with God — the wishes change, the questions don't.</div>
+      </div>
+      <div class="blog-item-arrow">→</div>
+    </div>
+
+  </div>
+
+  <div class="blog-subscribe-strip">
     <div class="blog-subscribe-left">
-      <p class="blog-coming-label">Coming Soon</p>
-      <p class="blog-coming-text">Essays, rants, half-baked ideas, and the occasional thing that actually matters. Subscribe to get notified when the first one drops.</p>
+      <p class="blog-coming-label">Stay in the loop</p>
+      <p class="blog-coming-text">More essays coming. Subscribe to get notified when something new drops.</p>
     </div>
     <div class="blog-subscribe-right">
       <form action="https://api.follow.it/subscription-form/VlNNd2k2RDNnc200aVhuY3BKT3E5TG9tT01NY0QyUmFsc29xRk9aVDVlZVd0eHJzTXBDYWU2dGNYeS9xMC9lR2ZqWVlLSDF0YjJWNzR0Wnhhb0c3eGxMcUwzUGlycGRscXBGTUFNRUpkUjRlUW5hVWJBVmsxbFdWeENEcG10QmR8S0pOdUxWOGZjQWwyVTFnNlF1RlF2c2l4cjNWNzhlemRNYkZ2SzFMUHhiOD0=/8" method="post" class="blog-form">
@@ -1828,6 +1943,71 @@
       </form>
       <p class="blog-fine-print">No spam. Unsubscribe anytime.</p>
     </div>
+  </div>
+</section>
+
+<!-- BLOG: CONFUSION -->
+<section id="blog-confusion" class="page blog-reader-page">
+  <div class="uc-inner" style="padding-top:3rem;">
+    <p class="uc-tag">Blog / Essay — 001</p>
+    <h2 class="uc-title" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,6rem);color:var(--white);line-height:1;margin-bottom:2rem;">Confusion</h2>
+  </div>
+  <div class="blog-essay-body">
+    <p>If I was to be held by the lasso of truth by the wonder woman herself, and was asked this one question, "Do you believe in God?", I might answer "What do you mean by the word, 'Believe' and the word, 'God'?"</p>
+    <p>What does the word believe actually mean? According to Google, the word "believe" means "to feel sure that something is true or that somebody is telling the truth" or "to think that something is true or possible, although you are not certain" and in both cases, if the question's intent was to ask me do I believe that there's an entity which we call "God" and is existing or had existed, or will come to existence in the future, I'd say yes, I do believe that there's a power which is so divine and powerful that I cannot fathom the existence of it.</p>
+    <p>I was once asked a question, "Who would like to have a conversation or a dinner with, dead or alive?" and I answered, "Lord Krishna" because I thought I'd be able to hold a conversation with him, but now that I think of it, I don't think that I'd be able to hold a conversation which would be so intellectually complex that my brain would be pumping blood like crazy, and I don't think that I'd be able to even see the figure in the true form, which would be my first wish which I'd ask him. Because, I personally feel that the god's true version is so complex that I cannot process it, something like a four dimensional object though we have some visualization of it present.</p>
+    <p>Talking more on believing, I personally think that if that word meant what I explored then the lasso of truth would force me to answer "yes" but if the word believe meant do I think that I should follow the teachings of god, then I might say no, which is quite literally the most controversial idea on the planet or for a Hindu to be particular.</p>
+    <p>Let's talk something different for once, the idea of love marriages in Indian households, more particularly in middle-class households, is something which is new and not even accepted till some degree, which I think is complete and utter bullshit, and I think that love marriages should be accepted because the meaning of marriages have changed. If you look back at the ancient times, people didn't married other people, but they just had a ton of sex with whoever was the supposed "alpha" or "the strongest person" because the female wanted her kid to be the strongest, and one idea was that a female had multiple partners because she wanted her kid to have different qualities of different males, and then somewhere in the future, the concept of marriages was introduced majorly because they wanted to join families, and this is the case for royals.</p>
+    <p>Marriages took a turn and then it became something a common couple would do to legalize or legitimize their relation, and I'm totally up for it, but till now, there are marriages in India or some other parts of the world which are still done to keep the society happy, which I'm totally against, if the couple is not happy with the marriage. But if they are happy, I don't think that it is a much big issue.</p>
+    <p>Let's talk about the former, one of the most used argument against arrange marriages is "the time was different when the arrange marriages were common and it's the modern time and the people of today will do what they please rather than what is the so called tradition" and I'm totally for the preposition.</p>
+    <p>But, doesn't the same apply to the rules which are made by our ancestors? If there's a rule that a person can't do this certain thing, it was with some explanation behind it, like the reason a North-Indian Hindu doesn't eat beef is because North India is a diary heavy place and how could you kill the animal and eat it when it gives you milk? But if we think from the lens, we have the resources to produce any animal just for the sole purpose of eating it, so, isn't the whole idea bogus now? Similarly for God, and following God, if there's a certain rule made by god, I think we have the liberty to think that it is either something I'd follow or not, because the rules were made some millions of years ago and now we're in a different time.</p>
+    <p>And, I don't think that God is asking us to follow it blindly, because if god wanted us to follow the rules blindly, then god won't allow me the brain power to think of writing this. I personally think that we shouldn't follow any rule because it is one, just like arrange marriages are the norm and follow that, that's the same concept.</p>
+    <p>These are my thoughts, and I don't think that you should take it very seriously. Please don't get offended by anything I said, though I'm all up for criticism.</p>
+  </div>
+  <div style="text-align:center;padding-bottom:5rem;">
+    <button class="back-btn" onclick="showPage('blog')">← Back to Blog</button>
+  </div>
+</section>
+
+<!-- BLOG: COMPARING SCARS -->
+<section id="blog-scars" class="page blog-reader-page">
+  <div class="uc-inner" style="padding-top:3rem;">
+    <p class="uc-tag">Blog / Essay — 002</p>
+    <h2 class="uc-title" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,6rem);color:var(--white);line-height:1;margin-bottom:2rem;">Comparing Scars</h2>
+  </div>
+  <div class="blog-essay-body">
+    <p>One of the most interesting things about human nature is that out of everything in this world to compare, we can compare each other's misery. What I mean by this is, that if there's a person born into privilege, they are looked down upon when they have some sort of problem, or misery in their life and the reason they give when asked, "Why is his misery smaller than yours?", they answer in a jiffy, "Because he was born with a silver spoon."</p>
+    <p>When I was younger, I got a laptop when I was in the second grade, and I believe that makes me a privileged child, not even among the people I was studying, because they are outsiders, but even in my own family. My cousins got their first computer years after that, and so did my other cousins. This privilege of mine gives them an extra point when we're debating, whether I speak about my knowledge of computers being more than them, or when I talk about my problems.</p>
+    <p>The idea of comparison isn't something which is born out of thin air, it is usually filled with jealousy and anger towards their circumstances. I can understand a person hating a rich kid's problem, because what is his one time problem sometimes is his daily life.</p>
+    <p>Growing up, I was constantly in those institutions where I was hit by something, it was either a hand, a PVC pipe, or sometimes a wooden stick, that too a thick one. The first time I was slapped by someone because of a question I did wrong, made me almost cry, because I wasn't living in the house where I was slapped, but eventually I was used to it. After some time, I was in another place, where I was hit by a stick, because of some reason, and I eventually got used to it, and then it started again, but I got used to it eventually.</p>
+    <p>One might say that the time taken to get used to being hit would've been avoided if I was slapped more by my parents over my mistakes, but I wasn't, and that gave me the new experience of being hit by someone.</p>
+    <p>I've used the most unexpected example for a reason, millions of kids face abuse at their household, and they keep quiet because it is the father whose hitting, and that make them subconsciously angry when they see a father not hitting their kid over a mistake and they form anger towards it, and they are obviously jealous. This is the same case of a wife seeing another's husband being romantic to their wife rather than using her body as sex-machine.</p>
+    <p>I just want to state that everyone's lifestyle is different, it is not your mistake that you're born into poverty, born into a household with a toxic environment, married to a partner who is a million miles away from being even "decent" and I totally understand the anger brewing inside you and frankly enough, I have some subconscious hate towards a lot of kids who have access to things that I cannot even dream of. But, I don't hate them, I don't criticize them unnecessarily, because what is the benefit? Why should you? What better is it doing?</p>
+    <p>Nothing, and that's the reality, there's nothing that would change by thinking about the narrative where you had a perfect father, a perfect household, a perfect husband or a wife, a perfect life.</p>
+  </div>
+  <div style="text-align:center;padding-bottom:5rem;">
+    <button class="back-btn" onclick="showPage('blog')">← Back to Blog</button>
+  </div>
+</section>
+
+<!-- BLOG: THREE WISHES -->
+<section id="blog-wishes" class="page blog-reader-page">
+  <div class="uc-inner" style="padding-top:3rem;">
+    <p class="uc-tag">Blog / Essay — 003</p>
+    <h2 class="uc-title" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,6rem);color:var(--white);line-height:1;margin-bottom:2rem;">Three Wishes</h2>
+  </div>
+  <div class="blog-essay-body">
+    <p>When I was a child, maybe in 2nd or 3rd grade, I always dreamt of asking for three wishes from a Jinn but as I'm a Hindu and born in India, I've been flooded by tales of people who meditated and prayed for god knows how much time till the god gets impressed and grant them a wish. Either they were three or one depending on what I would've found first, maybe 4 if I managed to find both of them.</p>
+    <p>I still laugh on myself while remembering the little Raunak, it feels like yesterday I was in 6th grade running and riding cycle in the streets. I remember what I wanted at that time, fastest runner. I was the fat kid, even though I wasn't notified about it everyday but there were three days I was reminded of that. My birthday, Rakshabandhan and Sports Day.</p>
+    <p>I quite never understood my school, it was different. My school took students for the sports team in the inter house sports competition who actually knew and were playing good. It might sound like an usual thing but it wasn't, the thing was that the teams for every year's competition was formed a month before the competition.</p>
+    <p>The actual point of these competition in my eyes is that students who are focused on studies starts to play in the early days of the academic year and then shortlisted with the student pool of the respective grades.</p>
+    <p>Well, I cannot change that and I'm already out of school. But I was constantly reminded that I was not the fastest runner, maybe the slowest? No, a more fatter guy was the slowest, I was the second slowest.</p>
+    <p>Either I never thought of the second and third wish or I thought of finding god first.</p>
+    <p>But I'm not in 3rd grade any more, I am 17 odd years old and I don't want infinite money or anything like that. It might sound cliche but I would like to meet god and have a dinner with him and ask my list of questions I wanted to ask him like "Should humans eat meat or vegetables?", "Is there an afterlife?", "Who created you?". Maybe the last question isn't getting answered.</p>
+    <p>If I tell this to anyone he/she might think that I'm just another teenager who is influenced by some reels/shorts on the internet, I don't know if I saw some of that but even if I did, I still want to ask him these questions and maybe I don't want my second and third wish because I find god first.</p>
+  </div>
+  <div style="text-align:center;padding-bottom:5rem;">
+    <button class="back-btn" onclick="showPage('blog')">← Back to Blog</button>
   </div>
 </section>
 

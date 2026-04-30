@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+  <channel>
+
+    <title>Raunak Singh Negi</title>
+    <link>https://rawnaknegi.vercel.app</link>
+    <description>Writer, Host, Ex-CS Addict and many more. Fiction, essays, and thoughts from Raunak Singh Negi.</description>
+    <language>en-us</language>
+    <copyright>Raunak Singh Negi</copyright>
+    <lastBuildDate>Thu, 30 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <ttl>1440</ttl>
+
+    <atom:link href="https://rawnaknegi.vercel.app/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <image>
+      <url>https://rawnaknegi.vercel.app/favicon.png</url>
+      <title>Raunak Singh Negi</title>
+      <link>https://rawnaknegi.vercel.app</link>
+    </image>
+
+    <!-- ────────────────────────────────────────────
+         FICTION
+         ──────────────────────────────────────────── -->
+
+    <item>
+      <title>Kidnapping of the Year — Screenplay</title>
+      <link>https://rawnaknegi.vercel.app/#fiction</link>
+      <guid isPermaLink="false">rksn-fiction-002</guid>
+      <dc:creator>Raunak Singh Negi</dc:creator>
+      <category>Fiction</category>
+      <category>Screenplay</category>
+      <pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[
+        <p>A screenplay. The title says it all — and somehow means more than it sounds.</p>
+        <p>Crime. Dark comedy.</p>
+        <p><a href="https://rawnaknegi.vercel.app/#fiction">Read on the site →</a></p>
+      ]]></description>
+    </item>
+
+    <item>
+      <title>Fiction and More Fiction — Screenplay</title>
+      <link>https://rawnaknegi.vercel.app/#fiction</link>
+      <guid isPermaLink="false">rksn-fiction-001</guid>
+      <dc:creator>Raunak Singh Negi</dc:creator>
+      <category>Fiction</category>
+      <category>Screenplay</category>
+      <pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[
+        <p>A screenplay in two worlds. The first opens in a bedroom at night — a gun, a man, a woman, and ten years of reputation about to collapse. The second follows VJ and Matt on the road, and Oscar and Michael out of a late-night cinema and into something they probably shouldn't be doing.</p>
+        <p>Crime. Dialogue. Dark comedy. Feature length.</p>
+        <p><a href="https://rawnaknegi.vercel.app/#fiction">Read on the site →</a></p>
+      ]]></description>
+    </item>
+
+    <!-- ────────────────────────────────────────────
+         BLOG POSTS — add new <item> blocks below
+         when you publish. Copy the template:
+
+    <item>
+      <title>Your Post Title Here</title>
+      <link>https://rawnaknegi.vercel.app/#blog</link>
+      <guid isPermaLink="false">rksn-blog-001</guid>
+      <dc:creator>Raunak Singh Negi</dc:creator>
+      <category>Blog</category>
+      <pubDate>Mon, 01 Jan 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[
+        <p>A short excerpt or summary goes here.</p>
+        <p><a href="https://rawnaknegi.vercel.app/#blog">Read more →</a></p>
+      ]]></description>
+    </item>
+
+         ──────────────────────────────────────────── -->
+
+  </channel>
+
+</rss>

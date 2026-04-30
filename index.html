@@ -366,11 +366,103 @@
   .download-btn {
     margin: 0 auto 1.25rem;
   }
-  .pdf-frame {
-    width: 100%;
-    height: min(70vh, 760px);
-    border: 1px solid var(--mid);
-    background: var(--grey);
+  .reader-page {
+    align-items: center;
+    padding-bottom: 4rem;
+  }
+  .reader-inner {
+    width: min(900px, calc(100vw - 2rem));
+    padding-top: 3rem;
+    margin: 0 auto;
+  }
+  .story-byline {
+    margin: -0.4rem auto 1.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.05rem, 2vw, 1.45rem);
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: rgba(240,236,228,0.7);
+    text-shadow: 0 0 14px rgba(240,236,228,0.12), 0 0 18px rgba(192,57,43,0.16);
+  }
+  .story-script {
+    width: min(760px, 100%);
+    margin: 3rem auto 0;
+    text-align: left;
+    position: relative;
+  }
+  .story-script p,
+  .story-script h3 {
+    text-shadow: 0 0 10px rgba(240,236,228,0.16), 0 0 24px rgba(192,57,43,0.12);
+  }
+  .script-scene {
+    margin: 3.6rem 0 1.2rem;
+    padding: 1rem 0 0.55rem;
+    border-top: 1px solid rgba(192,57,43,0.38);
+    border-bottom: 1px solid rgba(46,46,46,0.9);
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(0.72rem, 1.25vw, 0.9rem);
+    line-height: 1.7;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 700;
+  }
+  .script-action {
+    max-width: 680px;
+    margin: 1rem auto;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.08rem, 2vw, 1.32rem);
+    line-height: 1.72;
+    color: rgba(240,236,228,0.78);
+  }
+  .script-character {
+    width: min(430px, 100%);
+    margin: 2rem auto 0.35rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+  .script-parenthetical {
+    width: min(430px, 100%);
+    margin: 0.25rem auto 0.35rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.95rem, 1.5vw, 1.08rem);
+    line-height: 1.45;
+    font-style: italic;
+    color: rgba(240,236,228,0.56);
+  }
+  .script-dialogue {
+    width: min(430px, 100%);
+    margin: 0.25rem auto 0.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.08rem, 1.85vw, 1.25rem);
+    line-height: 1.62;
+    color: rgba(240,236,228,0.9);
+  }
+  .script-transition {
+    margin: 2rem 0 2rem auto;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-align: right;
+    color: var(--red);
+  }
+  @media (max-width: 650px) {
+    .story-script {
+      width: 100%;
+    }
+    .script-character,
+    .script-parenthetical,
+    .script-dialogue {
+      width: 100%;
+    }
+    .script-character {
+      margin-top: 1.6rem;
+    }
   }
   #fiction .uc-body {
     display: none;
@@ -450,11 +542,11 @@
     <p class="uc-tag">01 / Fiction</p>
     <div class="fiction-list">
       <div class="fiction-item">
-        <a class="fiction-work" href="#" onclick="showPage('fiction-more')">Fiction<br>and More<br>Fiction</a>
+        <a class="fiction-work" href="#" onclick="return showPage('fiction-more')">Fiction<br>and More<br>Fiction</a>
         <div class="uc-rule"></div>
       </div>
       <div class="fiction-item">
-        <a class="fiction-work" href="#" onclick="showPage('kidnapping')">Kidnapping<br>of the<br>Year</a>
+        <a class="fiction-work" href="#" onclick="return showPage('kidnapping')">Kidnapping<br>of the<br>Year</a>
         <div class="uc-rule"></div>
       </div>
     </div>
@@ -463,30 +555,1000 @@
 </section>
 
 <!-- FICTION AND MORE FICTION -->
-<section id="fiction-more" class="page uc-page">
+<section id="fiction-more" class="page uc-page reader-page">
   <div class="uc-bg-text">FIC</div>
-  <div class="uc-inner">
+  <div class="uc-inner reader-inner">
     <p class="uc-tag">01 / Fiction</p>
     <h2 class="uc-title">Fiction<br>and More<br>Fiction</h2>
+    <p class="story-byline">Written by Raunak Singh Negi</p>
     <div class="uc-rule"></div>
     <div class="fiction-reader">
       <a class="back-btn download-btn" href="Fiction and More Fiction.pdf" download>Download</a>
-      <iframe class="pdf-frame" src="Fiction and More Fiction.pdf" title="Fiction and More Fiction"></iframe>
+      <div class="story-script">
+<h3 class="script-scene">INT. MASTER BEDROOM - NIGHT</h3>
+<p class="script-action">In a room with a giant, queen-size bed in the middle of the room, with cherry red bedsheet, and pillows with white covers, there stands a man with a pistol in his hand. He is white and in his mid 30s to late 30s, he have a mustache and a common indistinguishable hairstyle. The pistol is pointed to a girl, she&#x27;s is in her mid 20s, she is white too, isn&#x27;t fat, but isn&#x27;t slim either, she have nice long hair, and is wearing a regular nighty.</p>
+<p class="script-character">MAN</p>
+<p class="script-parenthetical">(voice raising as he is saying the next word.)</p>
+<p class="script-dialogue">I told you, didn&#x27;t I? I told you, didn&#x27;t I?</p>
+<p class="script-character">GIRL</p>
+<p class="script-dialogue">I didn&#x27;t mean to, I wasn&#x27;t aware of the consequences.</p>
+<p class="script-character">MAN</p>
+<p class="script-parenthetical">(Spoke the moment she said con- in consequences.)</p>
+<p class="script-dialogue">Oh, you didn&#x27;t knew of the consequences? Are you a fucking retard? Like your fucking brother? That&#x27;s where you get your retardness?</p>
+<p class="script-character">GIRL</p>
+<p class="script-parenthetical">(Angry from listening about her brother, but is afraid of the gun pointed, so, suppressed the emotions.)</p>
+<p class="script-dialogue">I.. I&#x27;ll try my best... my best to fix the thing... just put the fucking gun down.</p>
+<p class="script-character">MAN</p>
+<p class="script-dialogue">I won&#x27;t, I fucking won&#x27;t put the gun down. In fact, I plan on using this gun, and it just happens to be that there&#x27;s a girl standing in front of my eyes, who have a done a sin to her husband, enough that she deserves death.</p>
+<p class="script-character">GIRL</p>
+<p class="script-dialogue">Listen.. We can fix this, I can fix this..</p>
+<p class="script-character">MAN</p>
+<p class="script-dialogue">No, you can&#x27;t, you&#x27;re lying, you&#x27;re a fucking liar, you shouldn&#x27;t had done it.</p>
+<p class="script-character">GIRL</p>
+<p class="script-dialogue">Just give me some time?</p>
+<p class="script-character">MAN</p>
+<p class="script-dialogue">Fuck you! You want time? It took me ten mother fucking years, 1-0, ten, years to make the reputation, the reputation you fucked in a day. IN A FUCKING DAY!</p>
+<p class="script-character">GIRL</p>
+<p class="script-dialogue">People forget, they will forget this too...</p>
+<p class="script-character">MAN</p>
+<p class="script-dialogue">No! NO! NO! No they won&#x27;t! They won&#x27;t forget, they won&#x27;t fucking forget, they won&#x27;t forget how I, got cheated on, and the funny thing is, that my wife cheated on me with a fucking retard! I think you have a thing for retards, did you fuck your brother too? I saw him peaking at your boobs while you serve him food!</p>
+<p class="script-character">GIRL</p>
+<p class="script-dialogue">Don&#x27;t you dare!</p>
+<p class="script-character">MAN</p>
+<p class="script-dialogue">I have seen him, I have seen him, oh boy, I have seen him...</p>
+<p class="script-character">GIRL</p>
+<p class="script-dialogue">Don&#x27;t you say another word!</p>
+<p class="script-character">MAN</p>
+<p class="script-dialogue">Oh boy, I got a confession out of this bitch! I have that sister fucking retard look at your when your panty lines are visible!</p>
+<p class="script-character">GIRL</p>
+<p class="script-dialogue">DON&#x27;T YOU FUCKING SAY ANOTHER MOTHER FUCKING WORD! YOU SMALL DICK BITCH!</p>
+<p class="script-action">As she said the word BITCH, the man punches her in the face with his gun, and she falls on the floor, she tries to stand up, and as she comes on all four, he hits in the face with his kick, she is again on the floor. She tries to run out of the room, but we hear a bang!</p>
+<p class="script-transition">CUT TO BLACK.</p>
+<h3 class="script-scene">EXT. BUSY ROAD - DAY</h3>
+<p class="script-action">The same man is on the passenger&#x27;s side, and there&#x27;s another guy driving the car, the person is Indian, about the same age as the other guy, though he is much more brown. It is a five- seater car, no one in the back seats, but some black dufflebags. The windows are up, the air conditioner is to the max, and the guys have a drink each and the man have a cigarette too.</p>
+<p class="script-character">MAN</p>
+<p class="script-dialogue">Pass me that smoke tray, will ya?</p>
+<p class="script-character">INDIAN GUY</p>
+<p class="script-parenthetical">(passes)</p>
+<p class="script-dialogue">Here</p>
+<p class="script-character">MAN</p>
+<p class="script-parenthetical">(using the tray)</p>
+<p class="script-dialogue">Tell me, uhm, tell me more about India.</p>
+<p class="script-character">INDIAN GUY</p>
+<p class="script-dialogue">That&#x27;s what you want to know? Do you ask every colored guy about their country?</p>
+<p class="script-character">MAN</p>
+<p class="script-dialogue">No! Are you calling me a racist?</p>
+<p class="script-character">INDIAN GUY</p>
+<p class="script-action">Kinda.</p>
+<p class="script-character">MAN</p>
+<p class="script-dialogue">No, I am not a racist...</p>
+<p class="script-character">INDIAN GUY</p>
+<p class="script-dialogue">I think you are, you are big one...</p>
+<p class="script-character">MAN</p>
+<p class="script-dialogue">I just asked you about it, because I thought,</p>
+<p class="script-character">INDIAN GUY</p>
+<p class="script-parenthetical">(didn&#x27;t let him finish the sentence)</p>
+<p class="script-dialogue">Because you thought, I&#x27;m an immigrant? I was born here in the states.</p>
+<p class="script-character">MAN</p>
+<p class="script-dialogue">Tsk.. I didn&#x27;t mean that... I thought, I&#x27;ll ask you this because you went to spend the holidays down there in India...</p>
+<p class="script-character">INDIAN GUY</p>
+<p class="script-dialogue">You didn&#x27;t meant that..</p>
+<p class="script-character">MAN</p>
+<p class="script-dialogue">Yes, I did..</p>
+<p class="script-character">INDIAN GUY</p>
+<p class="script-dialogue">No, you didn&#x27;t..</p>
+<p class="script-character">MAN</p>
+<p class="script-dialogue">Fuck you man, you don&#x27;t think that I make fun of you, you&#x27;re my brother from another mother... I even learnt Indian songs for you..</p>
+<p class="script-character">INDIAN GUY</p>
+<p class="script-dialogue">You did? You learnt Indian songs? This better not be some racist thing, or I&#x27;ll fuck you like a pig..</p>
+<p class="script-character">MAN</p>
+<p class="script-dialogue">You&#x27;ll fuck me like you&#x27;re a pig? Oink Oink... Oink Oink...</p>
+<p class="script-character">INDIAN GUY</p>
+<p class="script-dialogue">I&#x27;ll fuck you like you&#x27;re a pig...</p>
+<p class="script-character">MAN</p>
+<p class="script-dialogue">I knew it, I knew you Indians have a thing for animals.</p>
+<p class="script-character">INDIAN GUY</p>
+<p class="script-dialogue">Oh god,</p>
+<p class="script-character">MAN</p>
+<p class="script-dialogue">Out of all, a pig VJ? That&#x27;s why your fiance look like one!</p>
+<p class="script-character">VJ</p>
+<p class="script-dialogue">You mother fucker....</p>
+<p class="script-character">MAN</p>
+<p class="script-parenthetical">(sings the stereotypical Indian song)</p>
+<p class="script-dialogue">Ting ting ting ting...</p>
+<p class="script-character">VJ</p>
+<p class="script-dialogue">Sorry god, I&#x27;m going to kill an American today...</p>
+<p class="script-character">MAN</p>
+<p class="script-parenthetical">(laughs)</p>
+<p class="script-dialogue">You kill me in your dreams, you better wake up and apologize.</p>
+<p class="script-character">VJ</p>
+<p class="script-dialogue">Stop quoting movie lines.</p>
+<p class="script-character">MAN</p>
+<p class="script-dialogue">I will do what I please..</p>
+<p class="script-character">VJ</p>
+<p class="script-dialogue">Giving me a blowjob is the thing that&#x27;ll please you...</p>
+<p class="script-character">MAN</p>
+<p class="script-dialogue">You&#x27;re mistaken...</p>
+<p class="script-character">VJ</p>
+<p class="script-dialogue">No, I am not, I know you have a thing or two for me...</p>
+<p class="script-character">MAN</p>
+<p class="script-dialogue">I think you have it for me...</p>
+<p class="script-action">There&#x27;s an awkward silence for sometime, and that breaks with VJ chuckling followed with the Man.</p>
+<p class="script-parenthetical">(while laughing)</p>
+<p class="script-dialogue">I think, you should pull up, I gotta use the bathroom.</p>
+<p class="script-action">MAN (CONT&#x27;D)</p>
+<p class="script-character">VJ</p>
+<p class="script-dialogue">Want me to come in with you? You can taste it...</p>
+<p class="script-character">MAN</p>
+<p class="script-dialogue">You bitch.</p>
+<p class="script-character">VJ</p>
+<p class="script-parenthetical">(trying to control his laughter)</p>
+<p class="script-dialogue">Uhm, uh, huh, you should, uhm, wear a fucking a diaper, your blader is fucked up.</p>
+<p class="script-character">MAN</p>
+<p class="script-dialogue">I just drink a lot of water...</p>
+<p class="script-character">VJ</p>
+<p class="script-dialogue">No you don&#x27;t, I have only seen you drinking alcohol or soda..</p>
+<p class="script-character">MAN</p>
+<p class="script-dialogue">No, I drink water too... Matter of fact, I&#x27;ll go in and buy a water bottle...</p>
+<p class="script-character">VJ</p>
+<p class="script-dialogue">I hope you do...</p>
+<h3 class="script-scene">EXT. GAS STATION - CONTINUOUS</h3>
+<p class="script-action">VJ pulls up to a gas station, he parks the car not so far from the station. The man runs almost immediately to the gas station and runs to the bathroom, while VJ is walking to it.</p>
+<h3 class="script-scene">INT. GAS STATION - CONTINUOUS</h3>
+<p class="script-action">It&#x27;s a regular gas station, with a hispanic girl behind the counter, the girl looks young. She is late teens, early 20s. She is on her phone, and looks up once to see who entered and back on the phone.</p>
+<p class="script-action">VJ looks around, and goes to different aisles to check what they have. He takes a few items, and goes to register, and hands the item to the girl there. She looks up.</p>
+<p class="script-character">HISPANIC GIRL</p>
+<p class="script-dialogue">Just this?</p>
+<p class="script-character">VJ</p>
+<p class="script-dialogue">That&#x27;d be all</p>
+<p class="script-action">She starts to scan the items.</p>
+<p class="script-character">VJ (CONT&#x27;D)</p>
+<p class="script-dialogue">Uhm, how&#x27;s the day been?</p>
+<p class="script-character">HISPANIC GIRL</p>
+<p class="script-parenthetical">(not interested much)</p>
+<p class="script-dialogue">Not so bad...</p>
+<p class="script-character">VJ</p>
+<p class="script-dialogue">Hmm, mine wasn&#x27;t so bad either..</p>
+<p class="script-character">HISPANIC GIRL</p>
+<p class="script-dialogue">Alright, that&#x27;s good.</p>
+<p class="script-character">VJ</p>
+<p class="script-dialogue">I&#x27;m VJ by the way..</p>
+<p class="script-character">HISPANIC GIRL</p>
+<p class="script-dialogue">Nice... nice initials..</p>
+<p class="script-character">VJ</p>
+<p class="script-dialogue">It&#x27;s Vijay, but people can&#x27;t really pronounce it, so, I decided on VJ.</p>
+<p class="script-character">HISPANIC GIRL</p>
+<p class="script-dialogue">Oh, uhm, that&#x27;s the story then...</p>
+<p class="script-character">VJ</p>
+<p class="script-dialogue">That is the story... what&#x27;s your name?</p>
+<p class="script-character">HISPANIC GIRL</p>
+<p class="script-action">Dani.</p>
+<p class="script-character">VJ</p>
+<p class="script-dialogue">That is a good name right there..</p>
+<p class="script-character">DANI</p>
+<p class="script-dialogue">Thank you...</p>
+<p class="script-character">VJ</p>
+<p class="script-dialogue">Are you from around here?</p>
+<p class="script-character">DANI</p>
+<p class="script-dialogue">If you&#x27;re thinking of asking for my instagram or something, I&#x27;ll tell you now, that&#x27;s not happening at all.</p>
+<p class="script-character">VJ</p>
+<p class="script-dialogue">Whoa, I just, I was just asking your name, trying to have a small talk...</p>
+<p class="script-character">DANI</p>
+<p class="script-dialogue">That better be just small talk, cause you look like a uncle.</p>
+<p class="script-character">VJ</p>
+<p class="script-dialogue">Uncle? I&#x27;m 32...</p>
+<p class="script-character">DANI</p>
+<p class="script-dialogue">You like you&#x27;re from the `32..</p>
+<p class="script-character">VJ</p>
+<p class="script-parenthetical">(speechless)</p>
+<p class="script-character">DANI</p>
+<p class="script-dialogue">That&#x27;s $29.45, cash or card?</p>
+<p class="script-action">VJ brings his wallet out, and the man is coming towards them while drying his hands with his handkerchief, VJ takes out a $100 bill and hands it to Dani. The man is all excited.</p>
+<p class="script-character">MAN</p>
+<p class="script-parenthetical">(to Dani with his dried off hand)</p>
+<p class="script-dialogue">Hey, I&#x27;m Matt!</p>
+<p class="script-character">DANI</p>
+<p class="script-dialogue">Not again...</p>
+<p class="script-character">VJ</p>
+<p class="script-dialogue">Leave it...</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">What happened between you?</p>
+<p class="script-action">VJ put hand on his shoulder, and started walking towards the door.</p>
+<p class="script-character">MATT (CONT&#x27;D)</p>
+<p class="script-dialogue">What happened between you two man? You always cock-block me.</p>
+<p class="script-character">VJ</p>
+<p class="script-parenthetical">(laughs a bit)</p>
+<p class="script-dialogue">I ain&#x27;t cock-blocking you man..</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">What did you say to her?</p>
+<p class="script-action">As he was saying this, VJ&#x27;s phone rang and he picked it up.</p>
+<p class="script-character">VJ</p>
+<p class="script-dialogue">Hmm,... Hmmm, we&#x27;ll be there...</p>
+<p class="script-parenthetical">(looks at his watch)</p>
+<p class="script-dialogue">In an hour maybe? Sure. We&#x27;ll be there.</p>
+<p class="script-action">Puts the phone down.</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">Was that the call?</p>
+<p class="script-character">VJ</p>
+<p class="script-dialogue">It was.</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">What&#x27;s the location?</p>
+<p class="script-character">VJ</p>
+<p class="script-dialogue">The old warehouse behind the jeans factory.</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">In an hour, huh.</p>
+<p class="script-character">VJ</p>
+<p class="script-dialogue">We got some time before that..</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">Let&#x27;s go to the club then?</p>
+<p class="script-character">VJ</p>
+<p class="script-dialogue">In the morning?</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">It&#x27;s probably night in India...</p>
+<p class="script-character">VJ</p>
+<p class="script-dialogue">You motherfucker...</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">Come on...</p>
+<p class="script-action">They walk to the car while laughing. VJ sits at the driver&#x27;s seat and Matt at the passenger&#x27;s.</p>
+<p class="script-transition">CUT TO BLACK.</p>
+<h3 class="script-scene">Chapter 1: The Newbies</h3>
+<h3 class="script-scene">INT. CINEMA HOUSE - LATE NIGHT</h3>
+<p class="script-action">There are two boys walking out of a theatre, both of them are around the similar heights, and wear similar clothes, Oscar, with a shaggy mullet is wearing a navy blue hoodie, black jeans and white sneakers which are almost yellow, and Michael, the other one, is wearing a black sweatshirt, navy blue jeans and black sneakers.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-parenthetical">(in a non-angry but angry tone)</p>
+<p class="script-dialogue">The movie was full of shit man, I fucking wasted the last fucking thirty-fucking-five dollars watching this shit.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">That&#x27;s a lot of fucking and a lot of hate towards it.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Don&#x27;t bring me to another of these non-plot movies, I don&#x27;t like them at all, and if you do, please make sure to buy-my-ticket-too.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">The movie we just saw, that&#x27;s called, Ci-Ne-Ma and you&#x27;re a dumb monkey if you don&#x27;t like that.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">You fucking asshole, you think I&#x27;m a monkey? That fucking girl bouncing on that skinny boy&#x27;s dick for the entire movie was a dumb mother fucking monkey.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">I wouldn&#x27;t go as far as calling Mia a fucking donkey.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">The first rule of becoming a new rich is you never go telling everybody so quick, and especially when you&#x27;re a fucking whore. That&#x27;s why she was a whore, she was as dumb as they get.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">He&#x27;s surely gonna win an Oscar for this...</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Man, this film don&#x27;t even the Oscar walking next to me.</p>
+<h3 class="script-scene">EXT. OUTSIDE THE THEATRE - CONTINUOUS</h3>
+<p class="script-action">As they are exiting the cinema house, Oscar notices a group of young girls going by, and checks her out.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">At 3 O&#x27; Clock.</p>
+<p class="script-action">Michael looks over the right, at exactly 3 O&#x27; Clock as Oscar said to check out a bunch of ladies walking by.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">I always knew dogs had some super- smelling shit, but you got fucking super-eyes and shit.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">That&#x27;s what they know me for.</p>
+<p class="script-action">They start walking towards the girls.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">The black one looks good.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">There ain&#x27;t no black girl there.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">I meant the girl in the black dress...</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">That&#x27;s navy fucking blue, like your fucking jeans, fucking color-blind asshole.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">I ain&#x27;t no color blind, it&#x27;s my vitamin a deficiency.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-parenthetical">(fake emotional resonance, sarcasm)</p>
+<p class="script-dialogue">You never told me about that? What stage? Is this the final one? Don&#x27;t tell me that you&#x27;re leaving me so young....</p>
+<p class="script-action">Oscar laughs a bit, and so does Michael.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">What do you think, should we approach them?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">I don&#x27;t know about that, we&#x27;re pretty wasted, and they look like they&#x27;re a bit richer than us.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">God have fucked us in the ass, poverty is a bitch, the biggest one there is, even bigger than your sister.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">I mean, she is a bitch, but don&#x27;t call her a bitch, only me and her pretty lesbian friend can call her a bitch.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-parenthetical">(sarcastic seriousness)</p>
+<p class="script-dialogue">And, especially, when she&#x27;s fucking her with a dildo.</p>
+<p class="script-action">Oscar stopped walking and then Michael does after taking one more step than him.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-parenthetical">(mildly angry)</p>
+<p class="script-dialogue">Fuck you, fuck you, man. Calling my sister a lesbian ain&#x27;t fucking funny man.</p>
+<p class="script-action">Micheal starts walking and so does Oscar after a second.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Chill out man, it&#x27;s not that serious, just a joke, and it doesn&#x27;t matter that you don&#x27;t believe that she&#x27;s a lesbian, but I&#x27;ve seen your sister being an inch extra touching with her lesbian bitch.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">I didn&#x27;t knew you had super-eyes too.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">The &quot;super-eyes&quot; was a joke just like your sister being pegged by her friend. You ain&#x27;t shit.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">That hurted my feelings.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">&quot;Hurted&quot; ain&#x27;t a fucking word. You&#x27;re a bigger monkey than the director.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">The Baker guy?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-parenthetical">(in genuine confusion)</p>
+<p class="script-dialogue">Who&#x27;s the baker guy?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">He&#x27;s the director.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">He&#x27;s a baker? No wonder that film was full of sugar.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">No, his last name is Baker,</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">What&#x27;s his first?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">I think something with an &quot;S&quot;.</p>
+<p class="script-character">MICHEAL</p>
+<p class="script-action">Sam?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-parenthetical">(nods no)</p>
+<p class="script-dialogue">Tsk.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-action">Simon?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-parenthetical">(nods no)</p>
+<p class="script-dialogue">Tsk.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-action">Sean?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-parenthetical">(imitating Christoph Waltz&#x27; Hans Landa)</p>
+<p class="script-dialogue">Bravo.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Sean Baker, what other films have he made?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">There&#x27;s this called, &quot;The Florida Project&quot; and there&#x27;s another called &quot;Tangerine&quot;...</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Did they have prostitutes in them?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-action">Yes?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">He is what Scorsese is for gangsters.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Bravo again!</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-parenthetical">(looking forward, in a genuine disappointment)</p>
+<p class="script-dialogue">Did we lose the girls? Oh fuck me.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">This is cause of your bloody dumb questions.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Bitch you&#x27;re dumb for saying &quot;the baker guy&quot; instead of just saying &quot;the director&quot;.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Well, I did say he was the director but you still went ahead asking me his fucking name.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Well, I was intrigued to know.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Well, they don&#x27;t be mad at me for losing those pretty girls.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">We don&#x27;t know if they were pretty...</p>
+<p class="script-character">OSCAR</p>
+<p class="script-action">What?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">They had a sexy body, but we</p>
+<p class="script-transition">CUT TO:</p>
+<p class="script-action">couldn&#x27;t see their faces, so, I won&#x27;t just say that they were &quot;pretty&quot;.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">What do you mean?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">What I mean is that those girls perfectly sit in the box labeled &quot;SEXY&quot; but not &quot;PRETTY&quot; or &quot;BEAUTIFUL&quot;.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">So, you&#x27;re saying that if you had seen those girls&#x27; face and by some chance they didn&#x27;t had a sexy face-</p>
+<p class="script-action">Michael cuts him off.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">I don&#x27;t like girls with sexy face, you know that, I like girls with a &quot;Cute and Innocent Face&quot;.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">You want them to have a sexy body, but a cute face?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Well yeah, I want that.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">You&#x27;re one big asshole,</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Ain&#x27;t bigger than your sister&#x27;s when her &quot;Friend&quot; is done with her dildo.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-parenthetical">(angry and attempts to fight him a bit)</p>
+<p class="script-dialogue">You fucking asshole...</p>
+<h3 class="script-scene">INT. LIVING ROOM - MORNING</h3>
+<p class="script-action">Oscar is still sleeping while Michael just woke up, he is on the couch while Oscar is on the ground with a shitty-mattress under him. Michael&#x27;s mother, Paulina, brings some coffee and some breakfast for them and she puts on the table while he is browsing Netflix to find something good to put on while he eats his breakfast.</p>
+<p class="script-character">PAULINA</p>
+<p class="script-parenthetical">(after putting the breakfast, goes over to Oscar)</p>
+<p class="script-dialogue">Hey, Oscar, I brought you some breakfast.</p>
+<p class="script-action">She&#x27;s a kind lady, and know Oscar for as long as Michael knows him. After a lot of gentle shakes, he finally wakes up, and she leaves the room.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Thank you, auntie.</p>
+<p class="script-action">He is stretching, and makes some noises as one do when they wake up after a heavy night.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Wakey Wakey!</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Is that how your mother makes you awake?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-parenthetical">(imitates him)</p>
+<p class="script-dialogue">Is that how your mother makes you awake?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Smell&#x27;s nice, what&#x27;s she made?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Let&#x27;s see, we have some eggs, scrambled, some bread, and some coffee and some salad for me... Yeah that&#x27;s about it.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Well... that&#x27;s nice....</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Okay, then eat up quick, we gotta go to the diner to have some talk?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Oh yeah, but we gotta meet up my sister first,</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">You&#x27;re gonna finally ask her?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Don&#x27;t make me curse this early in the morning.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Okay, big boy...</p>
+<p class="script-transition">CUT TO:</p>
+<h3 class="script-scene">INT. GAS STATION - ABOUT FIFTEEN MINUTES LATER</h3>
+<p class="script-action">Oscar and Michael enter the gas station and finds Dani standing at the register, and is on her phone, but the ring that the door does, made her look up.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Hi Dani!</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Hi Dany!</p>
+<p class="script-character">DANI</p>
+<p class="script-dialogue">It&#x27;s Daa-Nee, Michael</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-parenthetical">(imitates her)</p>
+<p class="script-dialogue">It&#x27;s Daa-Nee, Micheal</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Ignore him, listen, yesterday we were at this meeting and they have asked us to come and meet them today, and we&#x27;re going there right now, and-</p>
+<p class="script-character">DANI</p>
+<p class="script-parenthetical">(cuts him off)</p>
+<p class="script-dialogue">Are you doing something illegal?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">What? No! Nothing illegal, it&#x27;s just, uhm, just some pick-and-drop.</p>
+<p class="script-character">DANI</p>
+<p class="script-dialogue">Pick-and-Drop? What are you picking and what are you dropping?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Some packages from their old place to their new one.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">We&#x27;re like movers.</p>
+<p class="script-character">DANI</p>
+<p class="script-dialogue">You&#x27;re not moving any humans are you?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">What! Why would we move any humans? I told you to stop listening to those true-crime podcasts, didn&#x27;t</p>
+<p class="script-character">I?</p>
+<p class="script-character">DANI</p>
+<p class="script-dialogue">I&#x27;ll listen to whatever I want to.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Whoa, that&#x27;s not the way to talk to your hermano.</p>
+<p class="script-character">DANI</p>
+<p class="script-dialogue">You stay out of this!</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Would you step outside for a moment?</p>
+<p class="script-action">Michael, looks to Oscar and is a bit annoyed, but he lits his cigarette and walks out of the station.</p>
+<p class="script-transition">CUT TO:</p>
+<h3 class="script-scene">EXT. GAS STATION</h3>
+<p class="script-action">Michael is standing not-so-far away from the station, and he is smoking that cigarette, after a few puffs, strolling around, and humming some song, he sees Oscar is back outside, he is a bit annoyed from his sister.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-parenthetical">(in an angrier tone)</p>
+<p class="script-dialogue">Okay, let&#x27;s go now!</p>
+<p class="script-action">He tosses the key towards Michael and he catches it.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Guess I&#x27;m driving.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-parenthetical">(angry)</p>
+<p class="script-dialogue">Everyday that she&#x27;s in the states, she&#x27;s becoming a bigger bitch!</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Cool down, man.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Da-fuck I should cool down for? First that lesbian friend of hers, now talking back to me, I should&#x27;ve let her in the mess.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Let the anger out...</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">I pay her rent, I pay for her tuition, I wrote her college applications, can you believe that? I wrote her fucking college applications!</p>
+<p class="script-parenthetical">(imitates being a nerd)</p>
+<p class="script-dialogue">&quot;The grocery list grew moist and crinkly in my hand.&quot; She never went to grocery shopping ever in her fucking life, she was too afraid of people other than me, our parents, and herself.</p>
+<p class="script-parenthetical">(pauses)</p>
+<p class="script-dialogue">And, now, she thinks that I&#x27;ve done nothing for her. It was either me or her in school back home, and it wasn&#x27;t like I was dumb, I was a good student, they called me Einstein&#x27;s half nut-</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-parenthetical">(laughs)</p>
+<p class="script-dialogue">What! They called you what?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Einstein&#x27;s</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Einstein&#x27;s half nut? Not even a full one?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">You don&#x27;t know the story behind it, and that&#x27;s why you&#x27;re laughing.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Tell me the story behind it.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">In my physics class, we had a hundred student, and in the mid- term exams, I scored the highest-</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">And it was?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">25 out of a hundred.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">And that was the highest?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">It was a hard exam man!</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Okay, I&#x27;ll take your word for it.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">You have to, why would I lie?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">I&#x27;m not saying that you&#x27;re lying.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">But you&#x27;re indirectly saying that.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">I am not saying that.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Yes you are, I see it in your eyes.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">You see what in my eyes?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">That you&#x27;re lying.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">How the fuck can you see that?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Divine powers. You know the super- eyes.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">I don&#x27;t know man, I don&#x27;t think you have super-shit!</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">That&#x27;s you, I don&#x27;t lie, and I said it now, that Oscar doesn&#x27;t lie.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Okay, Se�or.</p>
+<p class="script-action">Oscar get&#x27;s a bit angry on the comment, and the car takes off.</p>
+<p class="script-transition">CUT TO:</p>
+<h3 class="script-scene">INT. CAR - CONTINUOUS</h3>
+<p class="script-action">Michael parks the car on the road a bit far from the building.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Is this it?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">No, I parked a bit before, so, we don&#x27;t have the car number if there&#x27;s a CCTV there.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Your mother have poured some shit in the coffee, because your brain is on something.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">It&#x27;s not even on the pro-mode yet.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Put it in on the pro mode then.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-parenthetical">(as he is getting out of the car)</p>
+<p class="script-dialogue">I will when I&#x27;ll meet them.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-parenthetical">(as he is getting out of the car)</p>
+<p class="script-dialogue">I hope you do.</p>
+<h3 class="script-scene">EXT. STREET - CONTINUOUS</h3>
+<p class="script-action">They start walking towards the place they had to be at.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">On a second thought, I think the movie we saw last night was a bit of shitty.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">I was telling you but you were holding on to the baker guy&#x27;s balls like they were your parachute.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Whoa, I wasn&#x27;t hanging off his balls, or anyone&#x27;s for that matter.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">You were...</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Shut your bitch ass up man!</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Alright, let&#x27;s not get into another fight now.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">That&#x27;s what I thought!</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">What is that?</p>
+<p class="script-action">Both stop walking.</p>
+<p class="script-action">OSCAR (CONT&#x27;D) Man, you ain&#x27;t shit, you don&#x27;t even have the brain to get this deal and on that note, don&#x27;t talk unless you absolutely have to.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">You&#x27;re the leader now?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Yes I am!</p>
+<p class="script-action">Both start walking, Oscar in the lead.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">No, you&#x27;re not, we&#x27;re equals.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Yes, equal in partnership, equal when we&#x27;ll divide the money, equal when we do the job, equal in everything except in the meetings.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">And, why is that? I got the</p>
+<p class="script-transition">CUT TO:</p>
+<p class="script-action">charisma to charm anyone.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">How about your prom date? Huh?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">You said you don&#x27;t want to get into another argument and now brought her up, don&#x27;t you dare talk about her.</p>
+<p class="script-action">Oscar stops walking and then so does Michael.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Alright, then, promise that you won&#x27;t talk until you have to.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-parenthetical">(looks around)</p>
+<p class="script-dialogue">Okay...</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">No, say it.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Say what?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Say, &quot;I won&#x27;t talk until I absolutely have to&quot;</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-parenthetical">(like when people lose an argument)</p>
+<p class="script-dialogue">I won&#x27;t talk until I absolutely have to.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Right then.</p>
+<p class="script-action">They started walking again.</p>
+<h3 class="script-scene">INT. RENDEZVOUS LOCATION - CONTINUOUS</h3>
+<p class="script-action">They both are walking together.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">What&#x27;s the time?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">It&#x27;s 10:28</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Let&#x27;s wait a bit then.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Alright let&#x27;s smoke a bit then?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-action">Yeah..</p>
+<p class="script-action">They both walk a bit, and Michael brings out the box of cigarette, offer to Oscar, and picks up one, and then takes one for himself. He brings out his lighter, and lights it, and they both come closer with their cigarettes in their mouth and puffs it.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">So, how much would you be asking?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">I think for every pack, three thousand?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">That&#x27;s a bit less?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">How much should we ask then?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-action">Six?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">That won&#x27;t be a bit too much I think?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">I think it would be, but, it&#x27;s easier to split.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Do you have ADHD?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">I don&#x27;t know, I think?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-action">Hmm...</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">If we do take this job, it would open us the gate for us towards the...uhm...we&#x27;ll have more jobs.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Yes we will.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Hmm... don&#x27;t you think, we should start...</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Dating?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-action">Yea...</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Yeah we should...</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">What kind of girls you like?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Anything but blacks.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">You know what they say?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-action">What?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Blacks don&#x27;t crack.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">I haven&#x27;t had sex with a black yet.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Well, you should.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">I will, maybe hire an escort.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Hire from the elite ones, they have some celebrities up there too.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Celebrities like the film stars?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">The failed ones, and some models, the failed ones basically.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Hmm, interesting, `kay, let&#x27;s get in now.</p>
+<h3 class="script-scene">INT. RENDEZVOUS LOCATION&#x27;S ROOM - CONTINUOUS</h3>
+<p class="script-action">They both entered the room together, and found VJ and Matt standing nearby there. VJ was standing towards the door while Matt was looking away somewhere, but as the boys walked in, he looked towards them.</p>
+<p class="script-action">The boys walk in the room, and Michael shuts the door behind him.</p>
+<p class="script-action">After Fifteen Minutes</p>
+<p class="script-action">Michael and Oscar come out of the room. Oscar have some anxious expression, and Michael expression being a bit happy. They start walking out of the location.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">So, fifty five hundred a pack, twenty packs, a pound each, so, a hundred and ten, for twenty pounds. It makes up, fifty five each.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">That&#x27;s a lot of fucking money.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Yes that is.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">What are you gonna do with it?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">I&#x27;ll check out that website you told me earlier.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">I am telling you, you won&#x27;t regret it a bit.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Have you ever used it?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">No, but I have scrolled through it.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">And, what girls you found.</p>
+<p class="script-transition">CUT TO:</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">I found this one chick, she takes 6100 pounds for twelve hours and looks like Kendall Jenner.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">For 6100 pounds, that girl better be Kendall Jenner herself.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Man, you haven&#x27;t seen the photos yet, she&#x27;s tall, she&#x27;s British.</p>
+<p class="script-parenthetical">(in a bad British Accent)</p>
+<p class="script-dialogue">Bri-tish-uh.</p>
+<p class="script-parenthetical">(normal accent)</p>
+<p class="script-dialogue">British girl gonna moan in fucking British English, she gonna be moaning like,</p>
+<p class="script-parenthetical">(in a bad British accent again)</p>
+<p class="script-action">Uhh- Uhh- Ahh-</p>
+<p class="script-character">OSCAR</p>
+<p class="script-parenthetical">(laughs)</p>
+<p class="script-dialogue">For 6100 she must be the queen or something man.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">She is better than the queen.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">But do we have to go to England to taste the British cunt?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Or we can call her here, but we have to pay for everything, so, going there is much better.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Yes, it is.</p>
+<h3 class="script-scene">EXT. RENDEZVOUS LOCATION</h3>
+<p class="script-action">They are walking towards the car.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">How many ethnicities have you fucked?</p>
+<p class="script-action">Oscar stops walking and thinks, Michael stops walking too.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Let me think, uhm, White, Chinese, Japanese, and a hispanic of course. What about you?</p>
+<p class="script-action">They both start walking.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Uhm, White, Korean.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-parenthetical">(cuts him off)</p>
+<p class="script-dialogue">North or South?</p>
+<p class="script-character">MICHEAL</p>
+<p class="script-dialogue">How the fuck would fuck a northie?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">I just had to ask, clear my doubt, it&#x27;s just a general knowledge question.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">This ain&#x27;t no general knowledge bitch.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Alright, don&#x27;t get angry, it was a joke. Alright. What else?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">A Black, and a European.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Euro-Pean, from where?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">From where-where? From Europe.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">From where in Europe?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">I think she was German, or Italian, I don&#x27;t know, she was a mute.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">You fucked a mute?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Yep</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">So, no moans then?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-parenthetical">(in a non-angry manner, shouted)</p>
+<p class="script-dialogue">What?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">Did she moan or not?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Of course she moaned.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">How is she a mute then?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">She couldn&#x27;t speak, but she could make noises.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">How did you find her?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-action">Tinder</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">So, here in the states?</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Uh-huh.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">I&#x27;ve never been on Tinder.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">Why? You don&#x27;t like it?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">It&#x27;s just, very,</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-action">What?</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">I just don&#x27;t know, she might be a fucking asshole when I meet her, and then I&#x27;d have to sit with her for an hour and then pay the bill too</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">She can pay the bill too, or you can split it.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">I don&#x27;t do that, you know me. I might be broke as fuck, but I pay for every date.</p>
+<p class="script-character">MICHAEL</p>
+<p class="script-dialogue">I don&#x27;t make her pay, forcibly, girls just happen to offer it, and then I&#x27;m like yeah sure.</p>
+<p class="script-character">OSCAR</p>
+<p class="script-dialogue">They do offer that, but you gotta say no. You&#x27;re a dumb motherfucker.</p>
+<p class="script-action">They reach their car and sit inside and then drive off talking.</p>
+<h3 class="script-scene">The D-Day</h3>
+</div>
     </div>
     <button class="back-btn" onclick="showPage('fiction')">Back to Fiction</button>
   </div>
 </section>
 
 <!-- KIDNAPPING OF THE YEAR -->
-<section id="kidnapping" class="page uc-page">
+<section id="kidnapping" class="page uc-page reader-page">
   <div class="uc-bg-text">FIC</div>
-  <div class="uc-inner">
+  <div class="uc-inner reader-inner">
     <p class="uc-tag">01 / Fiction</p>
     <h2 class="uc-title">Kidnapping<br>of the<br>Year</h2>
+    <p class="story-byline">Written by Raunak Singh Negi</p>
     <div class="uc-rule"></div>
     <div class="fiction-reader">
       <a class="back-btn download-btn" href="kidnapping of the year.pdf" download>Download</a>
-      <iframe class="pdf-frame" src="kidnapping of the year.pdf" title="Kidnapping of the Year"></iframe>
+      <div class="story-script">
+<h3 class="script-scene">INT. HEAVEN&#x27;S PALACE&#x27;S STAIRCASE- AFTERNOON</h3>
+<p class="script-action">There are two men, one white and other a black, white one&#x27;s name is Matthew and the black one&#x27;s name is Christopher. Both of them are wearing casual clothes, tees and jeans. Matt have a small bag with him and Chris is sipping on his coffee and smoking his cigarette. They are walking with no hurry, they are as slow as they can be, not too slow, they are slow enough that no one would care about them.</p>
+<p class="script-action">They are in a middle of conversation.</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">-did you really marry her cause of her son?</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">Yeah, why not, the kid was friendly enough,</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">What do you mean friendly enough?</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">Ya know...</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">No I don&#x27;t know Chris. I want you to explain to me, how that kid was friendly enough that you married her mother.</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">He brings me beer, and chips, and-</p>
+<p class="script-character">MATT</p>
+<p class="script-parenthetical">(cuts him off)</p>
+<p class="script-dialogue">-a fucking dog can do that if you train him hard enough, and guess what you don&#x27;t have to marry a bitch to get a dog.</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">Whoa, don&#x27;t you call my wife the b- word...</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">The b-word? That bitch trained you to not say the word &quot;bitch&quot;?</p>
+<p class="script-character">CHRIS</p>
+<p class="script-parenthetical">(in a bit tiny serious tone)</p>
+<p class="script-dialogue">Don&#x27;t you call her a bitch again...</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">Yeah, you&#x27;re right, she aint a bitch, you are, and she is the fuckin&#x27; bitch boy trainer...</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">Da fuq you by mean that?</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">Oh, you know what I fucking mean, you married a</p>
+<p class="script-parenthetical">(chris looks at him, makes sure he doesn&#x27;t call him bitch)</p>
+<p class="script-action">Girl cause her kid was cute?</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">That&#x27;s exactly what I did...</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">These single moms are fuckin manipulators, I know cause my aunt was one, my cousin Johnny, nice kid, you know him...</p>
+<p class="script-parenthetical">(nods)</p>
+<p class="script-dialogue">Suffered from the men she brought home, while she rode their dicks, ya know what he did?</p>
+<p class="script-character">CHRIS</p>
+<p class="script-action">What?</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">He heard `em... they lived in a one room apartment, they used to do it in the livin room, while he used to</p>
+<p class="script-parenthetical">(does inverted commas with his hand)</p>
+<p class="script-action">&quot;sleep&quot;... he was really fucked up after that...</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">How do you know?</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">How did I know what?</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">No, how do you know they used to have sex in the livin room?</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">He told me that...</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">That nigga is lyin to shit on his mom, I don&#x27;t know why, but he is lyin</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">No he is not lyin</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">How do you know? He told you that?</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">He did tell me that</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">You&#x27;re sayin that nigga knew his mom, your aunt, be ridin dicks every now and then, and he never thought of actually sleepin</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">He had insomnia for god sakes</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">Shut your bitch ass up, nigger, he obviously was a cuck, listened to his momma getting fucked, he wanted to listen to her getting fucked in the ass hole prolly</p>
+<p class="script-character">MATT</p>
+<p class="script-parenthetical">(a bit pissed)</p>
+<p class="script-dialogue">How could you that asshole?</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">Hear what you&#x27;re saying, that nigger knew his mother was getting used like a fuckin cum dump, and instead of trying to avoid listening to it, by takin some sleep, or some sleepin pills or at least using some fuckin headphones, he told you, the most expert human being about it...</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">Man shut the fuck up, that isn&#x27;t the point, the point is, that when a kid sees his mother getting married to nother man, he is forced to call him &quot;daddy&quot; and then they break up, and nother dude comes, and they gotta call him &quot;daddy&quot; next...</p>
+<p class="script-parenthetical">(MORE)</p>
+<p class="script-character">MATT (CONT&#x27;D)</p>
+<p class="script-parenthetical">(takes a pause)</p>
+<p class="script-dialogue">And worse happens to girls, there are some...</p>
+<p class="script-parenthetical">(takes another pause)</p>
+<p class="script-dialogue">I want the N word pass</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">Granted.</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">And there are some niggers that take advantage of those little girls...</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">I agree to your points man, but I do love her, the kid was just...</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">Was just what?</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">Just made me say &quot;yes&quot;.</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">That&#x27;s the worst reason, you know what you&#x27;re sounding like right now?</p>
+<p class="script-character">CHRIS</p>
+<p class="script-action">What?</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">Tom Cruise in Jerry Maguire</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">I haven&#x27;t seen it.</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">Well you should and you would realize that the movie was a big fucking fantasy and the only reason a...</p>
+<p class="script-parenthetical">(takes another pause)</p>
+<p class="script-dialogue">Can I have one more?</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">Granted.</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">The only reason a nigger that was so deep in his own shit could get a girl like Ren�e Zellweger is if you look like fuckin Tom motherfuckin Cruise and the only reason Tom motherfuckin Cruise would comin back to a girl with a kid, who told him that she wants to break up, is when she looks like Ren�e Zellweger, at that point, if she got a truck worth of kids, I would adopt `em all...</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">Not a truck worth though, that pussy would big enough that the truck would get in it.</p>
+<p class="script-character">MATT</p>
+<p class="script-parenthetical">(laughs a bit)</p>
+<p class="script-dialogue">True.</p>
+<p class="script-action">There was some silence for a while, and it was awkward but something like the awkward silence on the first date. But, Chris broke the silence, when he asked questioned the statement Matt started talking with.</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">How are they manipulators though?</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">Ya know</p>
+<p class="script-action">The table&#x27;s flipped now.</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">No. I don&#x27;t know. Explain it to me.</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">Ya know, they have been round, they have tasted the sweet, sour, salth and the bitter of a marriage, and guess what, they choose a man, who is</p>
+<p class="script-parenthetical">(counts with his finger, one)</p>
+<p class="script-action">Good with their kid. Which you passed.</p>
+<p class="script-character">CHRIS</p>
+<p class="script-parenthetical">(proud in himself)</p>
+<p class="script-dialogue">Yes I did.</p>
+<p class="script-character">MATT</p>
+<p class="script-parenthetical">(continue to count with his fingers, two)</p>
+<p class="script-dialogue">Good in bed, fine would work too.</p>
+<p class="script-action">Chris gives him side eye.</p>
+<p class="script-character">MATT (CONT&#x27;D)</p>
+<p class="script-parenthetical">(three)</p>
+<p class="script-dialogue">Easily manipulated, so easy that they would stop saying the &quot;b- word&quot;.</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">Enough with that, okay?</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">Alright man</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">Thirty nine. One more floor to go...</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">Yeah, why did we take the stairs man?</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">I wanted to get into shape for my honeymoon in Hawaii, so doing ten thousand steps every day...</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">You look good enough man</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">Good enough, not great though.</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">Yeahhh..... why not taking that mounjaro shit man, some needles in that stomach of yours and would make you got flat as fuck...</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">I don&#x27;t do know drugs man...</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">For fucks&#x27; sake, you got a fucking cigarette between your fingers...</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">I meant performance enhancing drugss...</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">That&#x27;s a diabetes medicine, and it works for fat fucks too...</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">You&#x27;re calling me a fat fuck?</p>
+<p class="script-character">MATT</p>
+<p class="script-dialogue">Not you, in general....</p>
+<p class="script-action">It was the fortieth floor.</p>
+<p class="script-character">CHRIS</p>
+<p class="script-dialogue">Here&#x27;s our floor, get the masks out..</p>
+<p class="script-action">Matt gets the masks out, he hands out one to Chris and he takes one, and they wear `em.</p>
+<p class="script-action">Matt opens the door to the hallway, he looks to the right, and then to the left, there was no one.</p>
+<p class="script-action">Matt walks out, and checks every room&#x27;s number.</p>
+<p class="script-parenthetical">(points to a room)</p>
+<p class="script-dialogue">Here&#x27;s ours...</p>
+<p class="script-action">CHRIS (CONT&#x27;D) Matt nods, and then takes a step back, and let Chris come in front of him.</p>
+<p class="script-action">Chris takes his silenced glock out, and shoots the door knob, and lets Matt take the lead, he also takes his silenced gun out, they get into the room.</p>
+<p class="script-action">Matt takes his flashlight out, and then flashes it to see what&#x27;s happening, there was no one in the room. The room was pretty used, one could tell by the bedsheets.</p>
+<p class="script-action">Then, they hear a flush, someone is in the washroom, and they hide somewhere in the room. Chris holds his gun by the nozzle.</p>
+<p class="script-action">They hear the person in the washroom washing their hands, and then they hear them coming out. They are waiting patiently. As the woman comes out of the washroom, and towards the bed, Chris hits her with the gun and makes her scream and then unconscious.</p>
+<p class="script-transition">CUT TO BLACK.</p>
+<p class="script-action">On a black screen, &quot;Kidnapping of the Year&quot;.</p>
+</div>
     </div>
     <button class="back-btn" onclick="showPage('fiction')">Back to Fiction</button>
   </div>
